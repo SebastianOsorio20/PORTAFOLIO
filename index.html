@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastian Osorio | Portafolio de Ciencias de la Computación</title>
+    <title>Sebastian Osorio | Portafolio de Ingeniería de Software e IA</title>
     
     <link rel="stylesheet" href="style.css">
     
@@ -25,6 +25,7 @@
     </nav>
 
     <section id="inicio" class="hero">
+        <canvas id="canvas-hero-boids"></canvas>
         <div class="hero-content">
             <h1>Hola, soy <span class="resaltado">Sebastian Osorio</span></h1>
             <h2>Bachiller en Ciencias de la Computación</h2>
@@ -33,7 +34,8 @@
         </div>
     </section>
 
-    <section id="sobre-mi" class="seccion-oscura">
+    <section id="sobre-mi" class="seccion-oscura seccion-fondo">
+        <canvas id="canvas-pulsos"></canvas>
         <div class="contenedor">
             <h2 class="titulo-seccion">Sobre mí</h2>
             <div class="bloque-bio">
@@ -61,7 +63,8 @@
         </div>
     </section>
 
-    <section id="trayectoria" class="seccion-clara">
+    <section id="trayectoria" class="seccion-clara seccion-fondo">
+        <canvas id="canvas-constelaciones"></canvas>
         <div class="contenedor">
             <h2 class="titulo-seccion">Trayectoria Profesional y Académica</h2>
             
@@ -243,6 +246,131 @@
                 </ul>
               </div>
            </div>
+
+            <!-- PROYECTO 4: A* PATHFINDING -->
+            <div class="tarjeta-proyecto" style="margin-top: 50px;">
+                <div class="proyecto-visual">
+                    <canvas id="canvas-astar" width="420" height="360" style="border:1px solid #1e293b; border-radius:6px; cursor:crosshair; max-width:100%;"></canvas>
+                    <div class="controles-simulador" style="flex-wrap:wrap; gap:6px;">
+                        <button id="btn-astar-run" class="btn-simulador">▶ Buscar Camino</button>
+                        <button id="btn-astar-clear" class="btn-simulador btn-peligro">Limpiar</button>
+                        <button id="btn-astar-random" class="btn-simulador">Obstáculos</button>
+                        <span style="color:#94a3b8; font-size:0.75rem; width:100%; text-align:center;">Click/arrastra = muro | Verde=inicio | Rojo=meta</span>
+                    </div>
+                </div>
+                <div class="proyecto-info">
+                    <h3>A* Pathfinding Interactivo</h3>
+                    <p class="proyecto-subtitulo">Algoritmos de Búsqueda Heurística</p>
+                    <p>Visualización en tiempo real del algoritmo A* encontrando el camino óptimo en una cuadrícula dinámica con obstáculos dibujados por el usuario.</p>
+                    <ul class="lista-tecnica">
+                        <li><strong>Heurística:</strong> Distancia Manhattan con peso ajustado para exploración dirigida al objetivo, reduciendo nodos evaluados vs. BFS en ~60%.</li>
+                        <li><strong>Animación paso a paso:</strong> Cada nodo explorado (azul) y el camino final (verde) se renderizan en Canvas 2D a 60 FPS con cola de prioridad mínima.</li>
+                        <li><strong>Interactividad:</strong> Dibuja muros en tiempo real, reposiciona inicio/meta, genera laberintos aleatorios.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROYECTO 5: BOIDS -->
+            <div class="tarjeta-proyecto" style="margin-top: 50px;">
+                <div class="proyecto-visual" style="background-color:#05070a;">
+                    <canvas id="canvas-boids" width="460" height="360" style="border:1px solid #1e293b; border-radius:6px; max-width:100%;"></canvas>
+                    <div class="controles-simulador" style="flex-wrap:wrap; gap:6px;">
+                        <button id="btn-boids-pause" class="btn-simulador">⏸ Pausar</button>
+                        <button id="btn-boids-reset" class="btn-simulador btn-peligro">Reset</button>
+                        <label style="color:#94a3b8; font-size:0.8rem; display:flex; align-items:center; gap:6px;">
+                            Boids: <input id="boids-count" type="range" min="20" max="120" value="60" style="width:70px; accent-color:#10b981;">
+                            <span id="boids-count-val">60</span>
+                        </label>
+                        <span style="color:#94a3b8; font-size:0.75rem; width:100%; text-align:center;">Click en el canvas para atraer la bandada</span>
+                    </div>
+                </div>
+                <div class="proyecto-info">
+                    <h3>Boids — Inteligencia de Enjambre</h3>
+                    <p class="proyecto-subtitulo">IA Emergente · Comportamiento Colectivo</p>
+                    <p>Simulación de comportamiento emergente de bandadas usando las 3 reglas de Craig Reynolds: separación, alineación y cohesión. Sin coordinación central — cada agente decide solo.</p>
+                    <ul class="lista-tecnica">
+                        <li><strong>Separación:</strong> Cada boid evita colisionar con sus vecinos dentro de un radio de repulsión, calculando vectores de alejamiento ponderados por distancia.</li>
+                        <li><strong>Alineación:</strong> Cada agente ajusta su velocidad hacia el promedio de dirección de su vecindad local, creando movimiento sincronizado.</li>
+                        <li><strong>Cohesión:</strong> Los boids se mueven hacia el centroide de su grupo local, manteniendo la bandada unida sin comunicación global.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROYECTO 6: PARTÍCULAS -->
+            <div class="tarjeta-proyecto" style="margin-top: 50px;">
+                <div class="proyecto-visual" style="background-color:#05070a;">
+                    <canvas id="canvas-particles" width="460" height="360" style="border:1px solid #1e293b; border-radius:6px; cursor:crosshair; max-width:100%;"></canvas>
+                    <div class="controles-simulador" style="flex-wrap:wrap; gap:6px;">
+                        <button id="btn-particles-pause" class="btn-simulador">⏸ Pausar</button>
+                        <button id="btn-particles-reset" class="btn-simulador btn-peligro">Reset</button>
+                        <label style="color:#94a3b8; font-size:0.8rem; display:flex; align-items:center; gap:6px;">
+                            Gravedad: <input id="particles-gravity" type="range" min="0" max="10" value="3" style="width:70px; accent-color:#10b981;">
+                        </label>
+                        <span style="color:#94a3b8; font-size:0.75rem; width:100%; text-align:center;">Click = explosión de partículas</span>
+                    </div>
+                </div>
+                <div class="proyecto-info">
+                    <h3>Motor de Partículas con Física</h3>
+                    <p class="proyecto-subtitulo">Simulación Física · Colisiones y Gravedad</p>
+                    <p>Sistema de partículas con gravedad configurable, colisiones elásticas contra paredes y entre partículas, y efectos de trail. Simula un universo de N-cuerpos en Canvas 2D puro.</p>
+                    <ul class="lista-tecnica">
+                        <li><strong>Física:</strong> Integración de Verlet para posición/velocidad con amortiguación. Detección de colisión elástica O(n²) optimizada con spatial hashing.</li>
+                        <li><strong>Trail rendering:</strong> Canvas alpha-fade en cada frame para generar estelas de movimiento sin almacenar historial de posiciones.</li>
+                        <li><strong>Interactividad:</strong> Click genera explosiones con velocidad radial aleatoria. Gravedad ajustable en tiempo real sin reiniciar la simulación.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROYECTO 7: COLONIAS DE HORMIGAS -->
+            <div class="tarjeta-proyecto" style="margin-top: 50px;">
+                <div class="proyecto-visual" style="background-color:#05070a;">
+                    <canvas id="canvas-ants" width="460" height="360" style="border:1px solid #1e293b; border-radius:6px; max-width:100%;"></canvas>
+                    <div class="controles-simulador" style="flex-wrap:wrap; gap:6px;">
+                        <button id="btn-ants-pause" class="btn-simulador">⏸ Pausar</button>
+                        <button id="btn-ants-reset" class="btn-simulador btn-peligro">Reset</button>
+                        <label style="color:#94a3b8; font-size:0.8rem; display:flex; align-items:center; gap:6px;">
+                            Hormigas: <input id="ants-count" type="range" min="20" max="150" value="80" style="width:70px; accent-color:#10b981;">
+                            <span id="ants-count-val">80</span>
+                        </label>
+                        <span style="color:#94a3b8; font-size:0.75rem; width:100%; text-align:center;">Las hormigas buscan comida y trazan rutas con feromonas</span>
+                    </div>
+                </div>
+                <div class="proyecto-info">
+                    <h3>Colonia de Hormigas — ACO</h3>
+                    <p class="proyecto-subtitulo">Optimización por Colonia de Hormigas</p>
+                    <p>Implementación del algoritmo ACO donde agentes autónomos exploran el entorno, depositan feromonas al encontrar comida y refuerzan colectivamente los caminos más eficientes.</p>
+                    <ul class="lista-tecnica">
+                        <li><strong>Feromonas:</strong> Mapa de calor bidimensional con evaporación constante. Las hormigas siguen gradientes de feromona con probabilidad proporcional a la intensidad.</li>
+                        <li><strong>Exploración vs. explotación:</strong> Factor de aleatoriedad que permite a los agentes descubrir rutas nuevas frente a las ya establecidas.</li>
+                        <li><strong>Emergencia:</strong> Sin planificador central — las rutas óptimas emergen del comportamiento individual repetido de cientos de agentes simples.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROYECTO 8: HORMIGA DE LANGTON -->
+            <div class="tarjeta-proyecto" style="margin-top: 50px;">
+                <div class="proyecto-visual" style="background-color:#05070a;">
+                    <canvas id="canvas-langton" width="460" height="360" style="border:1px solid #1e293b; border-radius:6px; max-width:100%;"></canvas>
+                    <div class="controles-simulador" style="flex-wrap:wrap; gap:6px;">
+                        <button id="btn-langton-pause" class="btn-simulador">⏸ Pausar</button>
+                        <button id="btn-langton-reset" class="btn-simulador btn-peligro">Reset</button>
+                        <label style="color:#94a3b8; font-size:0.8rem; display:flex; align-items:center; gap:6px;">
+                            Velocidad: <input id="langton-speed" type="range" min="1" max="50" value="10" style="width:70px; accent-color:#10b981;">
+                        </label>
+                        <span id="langton-steps-label" style="color:#10b981; font-size:0.8rem; width:100%; text-align:center;">Pasos: 0</span>
+                    </div>
+                </div>
+                <div class="proyecto-info">
+                    <h3>Hormiga de Langton</h3>
+                    <p class="proyecto-subtitulo">Autómata Celular · Complejidad desde Simplicidad</p>
+                    <p>Un agente con 2 reglas genera caos durante ~10.000 pasos y luego emerge espontáneamente en un patrón periódico infinito — una de las demostraciones más puras de complejidad emergente.</p>
+                    <ul class="lista-tecnica">
+                        <li><strong>Reglas:</strong> En celda blanca → girar 90° derecha, pintar negro, avanzar. En celda negra → girar 90° izquierda, pintar blanco, avanzar. Solo eso.</li>
+                        <li><strong>Emergencia:</strong> Tras ~10.000 pasos de caos aparente, la hormiga construye una "autopista" diagonal que se repite infinitamente con período 104.</li>
+                        <li><strong>Universalidad:</strong> Se ha demostrado que la hormiga de Langton es Turing-completa — puede computar cualquier función computable con suficiente espacio.</li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
     </section>
