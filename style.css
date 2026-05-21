@@ -1,3 +1,4 @@
+/* Variables de color y fuentes */
 :root {
     --bg-principal: #0f172a;
     --bg-secundario: #1e293b;
@@ -18,30 +19,37 @@ section { padding: 80px 0; }
 .seccion-clara { background-color: var(--bg-secundario); }
 .titulo-seccion { font-size: 2.2rem; margin-bottom: 40px; text-align: center; font-weight: 700; }
 
+/* Navegación */
 .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background-color: rgba(15, 23, 42, 0.9); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); }
 .logo { font-size: 1.3rem; font-weight: bold; color: var(--color-acento); font-family: monospace; }
 .nav-links { list-style: none; display: flex; gap: 30px; }
 .nav-links a { color: var(--texto-claro); text-decoration: none; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: var(--color-acento); }
 
+/* Hero */
 .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, var(--bg-secundario) 0%, var(--bg-principal) 100%); padding-top: 80px; }
 .hero-content h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; }
 .resaltado { color: var(--color-acento); }
 .hero-content p { max-width: 700px; margin: 0 auto 35px auto; font-size: 1.2rem; color: var(--texto-oscuro); }
 
+/* Botones */
 .btn-primario, .btn-secundario, .btn-simulador { padding: 12px 24px; border-radius: 6px; font-weight: bold; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; font-size: 0.95rem; text-align: center; }
 .btn-primario { background-color: var(--color-acento); color: #fff; }
 .btn-primario:hover { background-color: #059669; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
 .btn-secundario { background-color: transparent; border: 2px solid var(--color-acento); color: var(--color-acento); display: inline-block; }
 .btn-secundario:hover { background-color: rgba(16, 185, 129, 0.1); }
 
+/* Sobre Mí */
 .bloque-bio { max-width: 850px; margin: 0 auto; text-align: center; font-size: 1.15rem; color: var(--texto-oscuro); }
+
+/* Grid Habilidades */
 .grid-skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
 .tarjeta-skill { background: var(--bg-principal); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s; }
 .tarjeta-skill:hover { transform: translateY(-5px); border-color: var(--color-acento); }
 .tarjeta-skill h3 { color: var(--color-acento); font-size: 1.2rem; margin-bottom: 10px; }
 .tarjeta-skill p { color: var(--texto-oscuro); font-size: 0.95rem; }
 
+/* Trayectoria */
 .trayectoria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
 .trayectoria-titulo { font-size: 1.5rem; color: var(--texto-claro); margin-bottom: 30px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--bg-tarjeta); padding-bottom: 15px; }
 .timeline { position: relative; padding-left: 30px; border-left: 2px solid var(--bg-tarjeta); }
@@ -50,33 +58,38 @@ section { padding: 80px 0; }
 .timeline-date { font-weight: bold; color: var(--color-acento); font-size: 1.1rem; margin-bottom: 5px; }
 .timeline-content { background: var(--bg-principal); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
 
+/* Certificados */
 .lista-certificados { list-style: none; margin-top: 15px; padding: 0; }
 .lista-certificados li { margin-bottom: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; }
 .enlace-credencial { color: var(--color-acento); text-decoration: none; font-weight: bold; margin-top: 5px; }
 
+/* Proyectos */
 .tarjeta-proyecto { background-color: var(--bg-principal); border-radius: 12px; overflow: hidden; display: flex; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); }
 .proyecto-visual { flex: 1; padding: 20px; background-color: #0a0e17; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 320px; }
 .proyecto-info { flex: 1; padding: 35px; }
 .proyecto-subtitulo { color: var(--color-acento); font-weight: 600; text-transform: uppercase; margin-bottom: 10px; }
 
+/* Canvas & Controles */
 canvas#lienzo-gol { border: 1px solid var(--bg-tarjeta); border-radius: 6px; cursor: crosshair; max-width: 100%; background-color: #05070a; }
 .controles-simulador { margin-top: 12px; display: flex; gap: 8px; width: 100%; justify-content: center; }
 .btn-simulador { background-color: var(--bg-tarjeta); color: var(--texto-claro); font-size: 0.85rem; padding: 6px 12px; }
 .btn-simulador:hover { background-color: var(--color-acento); }
 .btn-peligro:hover { background-color: var(--color-peligro); }
 
+/* Componentes IA */
 .camara-contenedor { position: relative; width: 100%; max-width: 440px; aspect-ratio: 4/3; }
 #canvas-ia { width: 100%; height: 100%; border-radius: 6px; background-color: #111; border: 1px solid var(--bg-tarjeta); }
 .overlay-ia { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; justify-content: center; align-items: center; border-radius: 6px; color: var(--color-acento); font-weight: bold; }
 
+/* KPI Cards */
 .kpi-card { background: #1e293b; padding: 10px 20px; border-radius: 8px; text-align: center; flex: 1; border-bottom: 2px solid var(--color-acento); }
 .kpi-card span { display: block; font-size: 0.7rem; color: var(--texto-oscuro); }
 .kpi-card b { font-size: 1.2rem; color: var(--color-acento); }
 
+/* Responsivo */
 @media (max-width: 850px) {
     .tarjeta-proyecto { flex-direction: column; }
     .trayectoria-grid { grid-template-columns: 1fr; }
     .hero-content h1 { font-size: 2.6rem; }
     .nav-links { display: none; }
-    .navbar { padding: 15px 25px; }
 }
