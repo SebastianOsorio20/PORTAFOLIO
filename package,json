@@ -1,0 +1,6 @@
+{
+  "name": "portafolio",
+  "scripts": {
+    "build": "echo done"
+  }
+}
