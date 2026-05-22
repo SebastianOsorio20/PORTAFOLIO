@@ -9,10 +9,9 @@
     
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-
+ 
     <nav class="navbar">
         <div class="logo">&lt;SebastianOsorio /&gt;</div>
         <ul class="nav-links">
@@ -22,7 +21,7 @@
             <li><a href="#proyectos">Proyectos</a></li>
         </ul>
     </nav>
-
+ 
     <section id="inicio" class="hero">
         <canvas id="canvas-hero-boids"></canvas>
         <div class="hero-content">
@@ -32,7 +31,7 @@
             <a href="#proyectos" class="btn-primario">Explorar Proyectos</a>
         </div>
     </section>
-
+ 
     <section id="sobre-mi" data-fade class="seccion-oscura seccion-fondo">
         <canvas id="canvas-pulsos"></canvas>
         <div class="contenedor">
@@ -40,7 +39,7 @@
             <div class="bloque-bio">
                 <p>Soy un profesional en Ciencias de la Computación con un perfil sólidamente orientado al rendimiento algorítmico, la automatización de procesos y la analítica de datos. Cuento con experiencia en el diseño e implementación de sistemas desde cero, la migración de arquitecturas de software y el desarrollo de herramientas inteligentes que transforman los flujos de trabajo tradicionales en entornos de alta exigencia, logrando un impacto directo en la eficiencia operativa.</p>
             </div>
-
+ 
             <div class="grid-skills" style="margin-top: 50px;">
                 <div class="tarjeta-skill">
                     <h3>Backend & Lógica</h3>
@@ -61,7 +60,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section id="trayectoria" data-fade class="seccion-clara seccion-fondo">
         <canvas id="canvas-nodos"></canvas>
         
@@ -93,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-
+ 
                 <div class="trayectoria-columna">
                     <h3 class="trayectoria-titulo">🎓 Educación y Certificados</h3>
                     <div class="timeline">
@@ -107,7 +106,7 @@
                                 <p>Universidad Peruana de Ciencias Aplicadas (UPC). Formación especializada en rendimiento de software, diseño algorítmico y visión artificial de alta precisión.</p>
                             </div>
                         </div>
-
+ 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-date">Junio 2025</div>
@@ -127,7 +126,7 @@
                                 </ul>
                             </div>
                         </div>
-
+ 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-date">Octubre 2023</div>
@@ -152,7 +151,7 @@
                                 </ul>
                             </div>
                         </div>
-
+ 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-date">2023</div>
@@ -164,18 +163,19 @@
                                  <a href="https://drive.google.com/file/d/16RI4yzHG30RB8cyzXN9AWl4sBzJT_Fl5/view?usp=sharing" target="_blank" class="enlace-credencial">🔗 Ver credencial</a>                       
                             </div>
                         </div>
-
+ 
                     </div>
                 </div>
-
+ 
             </div>
         </div>
     </section>
-
+ 
     <section id="proyectos" data-fade class="seccion-oscura">
         <div class="contenedor">
             <h2 class="titulo-seccion">Proyectos Destacados</h2>
             
+            <!-- PROYECTO 1: Autómata Celular Optimizado -->
             <div class="tarjeta-proyecto">
                 <div class="proyecto-visual">
                     <canvas id="lienzo-gol" width="500" height="350"></canvas>
@@ -195,7 +195,8 @@
                     </ul>
                 </div>
             </div>
-
+ 
+            <!-- PROYECTO 2: Zero-Touch UI & Computer Vision -->
             <div class="tarjeta-proyecto" style="margin-top: 50px;">
                 <div class="proyecto-visual">
                     <div class="camara-contenedor">
@@ -222,26 +223,8 @@
                     </div>
                 </div>
             </div>
-
-           <div class="tarjeta-proyecto" style="margin-top: 50px;">
-               <div class="proyecto-visual" style="background-color: #05070a; padding: 25px; border-radius: 12px; border: 1px solid #1e293b;">
-                  <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-                  <div class="kpi-card"><span>Producción</span><b id="kpi-prod">0</b></div>
-                  <div class="kpi-card"><span>Eficiencia</span><b id="kpi-eficiencia">0%</b></div>
-             </div>
-             <canvas id="canvas-data" height="200"></canvas>
-            </div>
-             <div class="proyecto-info">
-                  <h3>Analítica Industrial: Flujo Textil</h3>
-                      <p class="proyecto-subtitulo">Visualización de Datos en Tiempo Real</p>
-                       <p>Sistema de monitoreo que simula el flujo de producción textil y detección de mermas, optimizado para toma de decisiones rápida.</p>
-                <ul class="lista-tecnica">
-                   <li><strong>Generación de Datos:</strong> Algoritmo de suavizado basado en series temporales para simular carga de planta.</li>
-                    <li><strong>Visualización:</strong> Implementación de Chart.js con animaciones de transiciones fluidas.</li>
-                </ul>
-              </div>
-           </div>
-
+ 
+            <!-- PROYECTO 3: A* Pathfinding -->
             <div class="tarjeta-proyecto" style="margin-top: 50px;">
                 <div class="proyecto-visual">
                     <canvas id="canvas-astar" width="420" height="360" style="border:1px solid #1e293b; border-radius:6px; cursor:crosshair; max-width:100%;"></canvas>
@@ -263,32 +246,8 @@
                     </ul>
                 </div>
             </div>
-
-            <div class="tarjeta-proyecto" style="margin-top: 50px;">
-                <div class="proyecto-visual" style="background-color:#05070a;">
-                    <canvas id="canvas-boids" width="460" height="360" style="border:1px solid #1e293b; border-radius:6px; max-width:100%;"></canvas>
-                    <div class="controles-simulador" style="flex-wrap:wrap; gap:6px;">
-                        <button id="btn-boids-pause" class="btn-simulador">⏸ Pausar</button>
-                        <button id="btn-boids-reset" class="btn-simulador btn-peligro">Reset</button>
-                        <label style="color:#94a3b8; font-size:0.8rem; display:flex; align-items:center; gap:6px;">
-                            Boids: <input id="boids-count" type="range" min="20" max="120" value="60" style="width:70px; accent-color:#10b981;">
-                            <span id="boids-count-val">60</span>
-                        </label>
-                        <span style="color:#94a3b8; font-size:0.75rem; width:100%; text-align:center;">Click en el canvas para atraer la bandada</span>
-                    </div>
-                </div>
-                <div class="proyecto-info">
-                    <h3>Boids — Inteligencia de Enjambre</h3>
-                    <p class="proyecto-subtitulo">IA Emergente · Comportamiento Colectivo</p>
-                    <p>Simulación de comportamiento emergente de bandadas usando las 3 reglas de Craig Reynolds: separación, alineación y cohesión. Sin coordinación central.</p>
-                    <ul class="lista-tecnica">
-                        <li><strong>Separación:</strong> Cada boid evita colisionar con sus vecinos dentro de un radio de repulsión.</li>
-                        <li><strong>Alineación:</strong> Cada agente ajusta su velocidad hacia el promedio de dirección de su vecindad local.</li>
-                        <li><strong>Cohesión:</strong> Los boids se mueven hacia el centroide de su grupo local, manteniendo la bandada unida.</li>
-                    </ul>
-                </div>
-            </div>
-
+ 
+            <!-- PROYECTO 4: Motor de Partículas -->
             <div class="tarjeta-proyecto" style="margin-top: 50px;">
                 <div class="proyecto-visual" style="background-color:#05070a;">
                     <canvas id="canvas-particles" width="460" height="360" style="border:1px solid #1e293b; border-radius:6px; cursor:crosshair; max-width:100%;"></canvas>
@@ -311,61 +270,14 @@
                     </ul>
                 </div>
             </div>
-
-            <div class="tarjeta-proyecto" style="margin-top: 50px;">
-                <div class="proyecto-visual" style="background-color:#05070a;">
-                    <canvas id="canvas-ants" width="460" height="360" style="border:1px solid #1e293b; border-radius:6px; max-width:100%;"></canvas>
-                    <div class="controles-simulador" style="flex-wrap:wrap; gap:6px;">
-                        <button id="btn-ants-pause" class="btn-simulador">⏸ Pausar</button>
-                        <button id="btn-ants-reset" class="btn-simulador btn-peligro">Reset</button>
-                        <label style="color:#94a3b8; font-size:0.8rem; display:flex; align-items:center; gap:6px;">
-                            Hormigas: <input id="ants-count" type="range" min="20" max="150" value="80" style="width:70px; accent-color:#10b981;">
-                            <span id="ants-count-val">80</span>
-                        </label>
-                        <span style="color:#94a3b8; font-size:0.75rem; width:100%; text-align:center;">Las hormigas trazan rutas con feromonas</span>
-                    </div>
-                </div>
-                <div class="proyecto-info">
-                    <h3>Colonia de Hormigas — ACO</h3>
-                    <p class="proyecto-subtitulo">Optimización por Colonia de Hormigas</p>
-                    <p>Implementación del algoritmo ACO donde agentes autónomos exploran el entorno, depositan feromonas y refuerzan caminos más eficientes.</p>
-                    <ul class="lista-tecnica">
-                        <li><strong>Feromonas:</strong> Mapa de calor bidimensional con evaporación constante.</li>
-                        <li><strong>Emergencia:</strong> Sin planificador central — las rutas óptimas emergen del comportamiento individual repetido.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="tarjeta-proyecto" style="margin-top: 50px;">
-                <div class="proyecto-visual" style="background-color:#05070a;">
-                    <canvas id="canvas-langton" width="460" height="360" style="border:1px solid #1e293b; border-radius:6px; max-width:100%;"></canvas>
-                    <div class="controles-simulador" style="flex-wrap:wrap; gap:6px;">
-                        <button id="btn-langton-pause" class="btn-simulador">⏸ Pausar</button>
-                        <button id="btn-langton-reset" class="btn-simulador btn-peligro">Reset</button>
-                        <label style="color:#94a3b8; font-size:0.8rem; display:flex; align-items:center; gap:6px;">
-                            Velocidad: <input id="langton-speed" type="range" min="1" max="50" value="10" style="width:70px; accent-color:#10b981;">
-                        </label>
-                        <span id="langton-steps-label" style="color:#10b981; font-size:0.8rem; width:100%; text-align:center;">Pasos: 0</span>
-                    </div>
-                </div>
-                <div class="proyecto-info">
-                    <h3>Hormiga de Langton</h3>
-                    <p class="proyecto-subtitulo">Autómata Celular · Complejidad desde Simplicidad</p>
-                    <p>Un agente con 2 reglas genera caos durante ~10.000 pasos y luego emerge espontáneamente en un patrón periódico infinito.</p>
-                    <ul class="lista-tecnica">
-                        <li><strong>Reglas:</strong> En celda blanca → girar derecha, pintar negro. En celda negra → girar izquierda, pintar blanco.</li>
-                        <li><strong>Emergencia:</strong> Tras el caos inicial, la hormiga construye una "autopista" diagonal periódica.</li>
-                    </ul>
-                </div>
-            </div>
-
+ 
         </div>
     </section>
-
+ 
     <footer>
         <p>© 2026 | Diseñado y desarrollado con código nativo de alto rendimiento.</p>
     </footer>
-
+ 
     <script src="script.js"></script>
 </body>
 </html>
